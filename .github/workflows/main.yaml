@@ -13,14 +13,13 @@ jobs:
           node-version: 20
           
       - name: Install dependencies
-        # Added working-directory here so it finds your package.json
+        # Removed working-directory
         run: npm ci --legacy-peer-deps
-        working-directory: ui.frontend
 
       - name: Install missing peer dependencies
+        # Removed working-directory
         run: npm install @babel/core @babel/eslint-parser --no-save --legacy-peer-deps
-        working-directory: ui.frontend
 
       - name: Run Lint
+        # Removed working-directory
         run: npm run lint
-        working-directory: ui.frontend
