@@ -1,2 +1,4 @@
 helix-importer-ui
 *.min.js
+# Ignore the AEM core library which causes linting crashes
+/scripts/aem.js
