@@ -5,10 +5,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: Use Node.js 20
-      uses: actions/setup-node@v6
-      with:
-        node-version: 20
-    - run: npm ci --legacy-peer-deps
-    - run: npm run lint
+      - uses: actions/checkout@v6
+      
+      - name: Use Node.js 20
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          
+      - name: Install dependencies
+        # Added working-directory here so it finds your package.json
+        run: npm ci --legacy-peer-deps
+        working-directory: ui.frontend
+
+      - name: Install missing peer dependencies
+        run: npm install @babel/core @babel/eslint-parser --no-save --legacy-peer-deps
+        working-directory: ui.frontend
+
+      - name: Run Lint
+        run: npm run lint
+        working-directory: ui.frontend
