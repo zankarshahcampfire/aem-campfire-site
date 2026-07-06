@@ -148,23 +148,6 @@ p.button-wrapper {
   margin: 12px 0;
 }
 
-main .button-container {
-  display: inline;
-}
-
-main a.button:any-link {
-  background: none;
-  border: none;
-  border-radius: 0;
-  color: var(--link-color);
-  font-size: inherit;
-  font-weight: inherit;
-  padding: 0;
-  margin: 0;
-  text-decoration: underline;
-  white-space: normal;
-}
-
 a.button:any-link,
 button.button {
   box-sizing: border-box;
@@ -271,6 +254,23 @@ button.button.accent:disabled:focus-visible {
   background-color: var(--light-color);
   border-color: var(--light-color);
   color: var(--dark-color);
+}
+
+main .button-container {
+  display: inline;
+}
+
+main a.button:any-link {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  white-space: normal;
 }
 
 main img {
